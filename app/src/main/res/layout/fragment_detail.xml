@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".view.DetailFragment">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notes_title"
+        android:text="Judul"
+        android:textSize="17sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notes_date_create"
+        android:text="tanggal"
+        android:textSize="15sp"
+        android:layout_below="@id/notes_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notes_description"
+        android:text="notes notes notes"
+        android:layout_below="@id/notes_date_create"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="50dp"/>
+
+
+</RelativeLayout>
