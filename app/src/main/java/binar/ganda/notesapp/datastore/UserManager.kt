@@ -12,27 +12,20 @@ class UserManager(context: Context) {
 
     companion object {
         val USERNAME = preferencesKey<String>("USER_USERNAME")
-        val NAME = preferencesKey<String>("USER_NAME")
         val PASSWORD = preferencesKey<String>("USER_PASSWORD")
     }
 
-    suspend fun saveDataLogin(
-        username : String,
-        name : String,
-        password : String
-    ){  dataStore.edit{
-        it[USERNAME] = username
-        it[NAME] = name
-        it[PASSWORD] = password
+    suspend fun saveDataLogin(username : String, password : String) {
+        dataStore.edit{
+            it[USERNAME] = username
+            it[PASSWORD] = password
         }
     }
 
     val userUsername : Flow<String> = dataStore.data.map {
         it[USERNAME] ?: ""
     }
-    val userName : Flow<String> = dataStore.data.map {
-        it[NAME] ?: ""
-    }
+
     val userPassword : Flow<String> = dataStore.data.map {
         it[PASSWORD] ?: ""
     }

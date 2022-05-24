@@ -10,7 +10,7 @@ import binar.ganda.notesapp.local.notes.NotesDatabase
 import kotlinx.android.synthetic.main.item_notes.view.*
 
 class NotesAdapter(
-    private val listNotes : List<Notes>,
+    private val listNotes : ArrayList<Notes>,
     private val onClick : (Notes) -> Unit
 ): RecyclerView.Adapter<NotesAdapter.ViewHolder>(){
 
@@ -26,7 +26,11 @@ class NotesAdapter(
     override fun onBindViewHolder(holder: NotesAdapter.ViewHolder, position: Int) {
         holder.itemView.title_tv.text = listNotes[position].title
         holder.itemView.desc_tv.text = listNotes[position].desc
-        holder.itemView.date_tv.text = listNotes[position].date.toString()
+        holder.itemView.date_tv.text = listNotes[position].date
+
+        holder.itemView.card_notes.setOnClickListener {
+            onClick(listNotes[position])
+        }
     }
 
     override fun getItemCount(): Int {

@@ -10,8 +10,8 @@ import java.time.LocalDateTime
 @Entity
 @Parcelize
 data class Notes(
-    @PrimaryKey(autoGenerate = true) var id : Int?,
-    @ColumnInfo(name = "title") var title : String?,
-    @ColumnInfo(name = "description") var desc : String?,
-    @ColumnInfo(name = "date") var date : String?
+    @PrimaryKey(autoGenerate = true) var id: Int?,
+    @ColumnInfo(name = "title") var title: String?,
+    @ColumnInfo(name = "description") var desc: String?,
+    @ColumnInfo(name = "date") var date: String?
 ) : Parcelable

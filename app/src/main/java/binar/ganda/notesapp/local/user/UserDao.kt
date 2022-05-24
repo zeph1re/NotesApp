@@ -11,7 +11,7 @@ interface UserDao {
     fun registerUser(user : User) : Long
 
     @Query("SELECT * FROM User WHERE User.username = :username AND User.password = :password")
-    fun getUserInfo(username : String, password : String) : String
+    fun getUserInfo(username : String, password : String) : User
 
     //getting user data details
     @Query("select * from User where id =:id")
