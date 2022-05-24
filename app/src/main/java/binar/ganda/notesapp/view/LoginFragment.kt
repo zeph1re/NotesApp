@@ -71,7 +71,7 @@ class LoginFragment : Fragment() {
 
             activity?.runOnUiThread {
                 userLogin.let {
-                    if (userLogin?.username.toString() != usernameLogin && userLogin?.password?.toString() != passwordLogin){
+                    if (userLogin.isNullOrEmpty()){
                         Toast.makeText(requireContext(),"Username dan Password Salah",Toast.LENGTH_LONG).show()
                     } else {
                         val sharedPref = requireContext().getSharedPreferences("USER_DATA", Context.MODE_PRIVATE)

@@ -9,7 +9,10 @@ import binar.ganda.notesapp.local.notes.Notes
 import binar.ganda.notesapp.local.notes.NotesDatabase
 import kotlinx.android.synthetic.main.item_notes.view.*
 
-class NotesAdapter(private val listNotes : List<Notes>): RecyclerView.Adapter<NotesAdapter.ViewHolder>(){
+class NotesAdapter(
+    private val listNotes : List<Notes>,
+    private val onClick : (Notes) -> Unit
+): RecyclerView.Adapter<NotesAdapter.ViewHolder>(){
 
     private var notesDB : NotesDatabase? = null
 
